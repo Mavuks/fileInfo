@@ -16,10 +16,19 @@ class book {
 
         System.out.println(fileCommonWord("raamat.txt"));
         System.out.println(fileLongestWord("raamat.txt"));
-   }
+    }
 
-    private static List fileLongestWord(String failName) throws FileNotFoundException {
-        File file = new File(failName);
+    /**
+     *
+     * Find the longest word in the text. If more than one word qualifies, find them all.
+     * @param fileName File name where to find longest word
+     *
+     * @return List of longest words
+     *
+     * @throws FileNotFoundException when file is not found.
+     */
+    private static List fileLongestWord(String fileName) throws FileNotFoundException {
+        File file = new File(fileName);
 
         Scanner scan = new Scanner(file);
         HashMap<String, Integer> longestWord = new HashMap<>();
@@ -56,9 +65,18 @@ class book {
         return listLongestWord;
     }
 
-
-    private static Map fileCommonWord(String failName) throws FileNotFoundException {
-        File file = new File(failName);
+    /**
+     *
+     * Find the most common word in the text with 8 or more characters.
+     *
+     * @param fileName File name where to find the common word.
+     *
+     * @return map of common word.
+     *
+     * @throws FileNotFoundException when file is not found.
+     */
+    private static Map fileCommonWord(String fileName) throws FileNotFoundException {
+        File file = new File(fileName);
 
         Scanner scan = new Scanner(file);
 
